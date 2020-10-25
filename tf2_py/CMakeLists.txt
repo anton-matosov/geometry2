@@ -60,8 +60,10 @@ endif()
 ament_target_dependencies(${PROJECT_NAME}
   "geometry_msgs"
   "tf2"
-  "PythonExtra"
 )
+
+target_link_libraries(tf2_py ${PythonExtra_EXTENSION_LIBRARIES})
+target_include_directories(tf2_py PRIVATE ${PythonExtra_INCLUDE_DIRS})
 
 install(TARGETS
   ${PROJECT_NAME}
