@@ -62,8 +62,7 @@ ament_target_dependencies(${PROJECT_NAME}
   "tf2"
 )
 
-target_link_libraries(tf2_py ${PythonExtra_EXTENSION_LIBRARIES})
-target_include_directories(tf2_py PRIVATE ${PythonExtra_INCLUDE_DIRS})
+target_link_libraries(tf2_py PythonExtra::Extension)
 
 install(TARGETS
   ${PROJECT_NAME}
